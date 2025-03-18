@@ -29,5 +29,14 @@ public class ThreadDemo {
 			r2.start();
 			r3.start();
 			
+			Thread s1 = new Thread(()->timmy.move(-400));
+			Thread s2 = new Thread(()->tammy.move(-400));
+			Thread s3 = new Thread(()->sammy.move(-400));
+			
+			/*s1.start();
+			s2.start();
+			s3.start();
+			*/
+			
 	}
 }
