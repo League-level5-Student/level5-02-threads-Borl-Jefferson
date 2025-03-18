@@ -3,7 +3,7 @@ package _01_Olympic_Rings;
 import org.jointheleague.graphical.robot.Robot;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics; 
 import java.awt.Graphics2D;
 import java.util.Iterator;
 
