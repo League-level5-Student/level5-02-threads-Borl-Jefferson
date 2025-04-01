@@ -33,7 +33,7 @@ public class ThreadedGreeting {
 	public static void main(String[] args) {
 		//5. Create the first thread and initialize it with an object of the ThreadedGreeter class.
 		//   The ThreadedGreeter object should be initialized with 1.
-		Thread t = new Thread(new ThreadedGreeter(1));
+		Thread t = new Thread(new ThreadGreeter(1));
 		
 		//6. Start and join the thread. Did you get the required output?
 		t.start();
