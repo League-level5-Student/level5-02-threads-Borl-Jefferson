@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 
 import org.junit.jupiter.api.Test;
 
+import _04_Thread_Pool.WorkQueue;
+
 class DistanceFromCenterTest {
 
 	public static double distance(double x1, double y1, double x2, double y2) {
@@ -53,12 +55,12 @@ class DistanceFromCenterTest {
 		startTime = System.nanoTime();
 		
 		WorkQueue wq = new WorkQueue();
-		int ct = wq.getThreadCount() + 1;
+		int ct = wq.getthrdcount() + 1;
 		int dv = height / ct;
 		for (int i = 0; i < ct; i++) {
 			int ys = dv * i;
 			int ye = ys + dv;
-			wq.addJob(() -> {
+			wq.addjob(() -> {
 				for (int y = ys; y < ye; y++) {
 					for (int x = 0; x < width; x++) {
 						int xx = x;

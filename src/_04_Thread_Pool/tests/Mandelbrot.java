@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import _04_Thread_Pool.WorkQueue;
+
 public class Mandelbrot implements KeyListener {
 	public static final int WIDTH = 700;
 	public static final int HEIGHT = 500;
@@ -117,13 +119,13 @@ public class Mandelbrot implements KeyListener {
 	}
 
 	public void updateWindowImageMulti() {
-		int t = workQueue.getThreadCount() + 1;
+		int t = workQueue.getthrdcount() + 1;
 		int div = HEIGHT / t;
 
 		for (int i = 0; i < t; i++) {
 			int ys = i * div;
 			int ye = ys + div;
-			workQueue.addJob(() -> {
+			workQueue.addjob(() -> {
 				for (int y = ys; y < ye; y++) {
 					for (int x = 0; x < WIDTH; x++) {
 						calculateMandelbrotPixelColor(pixels, x, y);
@@ -131,7 +133,7 @@ public class Mandelbrot implements KeyListener {
 				}
 			});
 		}
-		workQueue.completeAllJobs();
+		workQueue.completejobs();
 	}
 
 	public void keyPressed(KeyEvent e) {
