@@ -30,18 +30,18 @@ public class SynchronizedSwimming {
 	 */
 	private static void swimLap(Swimmer swimmer) throws InterruptedException {
 		
+		synchronized(swimmer.getThreadGroup()) {
 		System.out.println(swimmer.name + " started a lap!");
 		Thread.sleep(2000);
 		System.out.println(swimmer.name + " finished!");
 		}
+	}
 	
 
 	public static void takeTurn(Swimmer swimmer) {
 		try {
-			synchronized(swimmer) {
 			swimLap(swimmer);
 			Thread.sleep(100);
-			}
 		} catch (InterruptedException ignore) {
 		}
 	}
